@@ -1,7 +1,7 @@
 let estadoLicuadora = "apagado";
 
 let sonidoLicuadora = document.querySelector("#licuadora-sonido");
-let sonidoBoton = document.querySelector("#licuadora-sonido-boton");
+let sonidoBoton = document.querySelector("#licuadora-boton-sonido");
 
 let licuadora = document.querySelector("#licuadora");
 let boton = document.querySelector("#licuadora-boton");
@@ -24,7 +24,9 @@ const hacerRuidillo = () => {
     sonidoLicuadora.play();
   } else {
     sonidoBoton.play();
-    sonidoLicuadora.paused();
+    sonidoLicuadora.pause();
     sonidoLicuadora.currentTime = 0;
   }
 };
+
+boton.addEventListener("click", () => controlarLicuadora());
